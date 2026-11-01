@@ -1,12 +1,20 @@
+<p>
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="assets/brand/kervia-logo-dark.svg">
+    <source media="(prefers-color-scheme: light)" srcset="assets/brand/kervia-logo-clair.svg">
+    <img src="assets/brand/kervia-logo-clair.svg" alt="Kervia" width="232">
+  </picture>
+</p>
+
 # Kervia Humanizer FR/EN
+
+[Français](README.md) · [English](README.en.md)
 
 **Experimental version: human review is needed before publication.** The benchmark also exposes style and scope limitations.
 
-Edit French and English prose while preserving facts, qualifications and authorial voice. Draft from supplied notes without fabricating real-world detail. This is an editorial skill, not a detector-evasion tool.
+A Kervia skill for editing French and English prose: remove empty phrasing, preserve information and keep the author’s voice. It can also draft from supplied notes without fabricating real-world detail. Its purpose is better writing, not evading AI detectors.
 
 **Inspired by [blader/humanizer](https://github.com/blader/humanizer), by Siqi Chen.** Kervia's runtime rules and local checker were written for this project. An unchanged upstream copy is included only as a labelled benchmark baseline, with its MIT licence. See [attribution](THIRD_PARTY_NOTICES.md).
-
-[Documentation française](README.md)
 
 ## Runtime footprint
 
@@ -24,7 +32,7 @@ Install only `skills/kervia-humanizer-fr-en/`, the text-only package containing 
 hermes skills install kerviaHerve/kervia-humanizer-fr-en/skills/kervia-humanizer-fr-en
 ```
 
- In Hermes, load `kervia-humanizer-fr-en` and provide the task. The benchmark baseline is not another runtime skill.
+In Hermes, load `kervia-humanizer-fr-en` and provide the task. The benchmark baseline is not another runtime skill.
 
 Example: “Lightly edit this British English email. Preserve the names, conditions and commitments. Leave clear passages unchanged.”
 
@@ -58,6 +66,10 @@ python3 scripts/check_preservation.py original.md revision.md
 ```
 
 The [checker](references/checker.md) makes no model call and changes no input. The agent may spend tokens reading its instructions or result. A mechanical pass never certifies meaning.
+
+## Kervia and repository identity
+
+The light and dark logos come from the supplied Kervia brand kit v02. They stay outside the installed package, so neither runtime loading nor the published token measurements change. [Asset provenance](assets/brand/README.md) · [Kervia](https://kervia.ch).
 
 ## Tests and licence
 

@@ -1,12 +1,20 @@
+<p>
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="assets/brand/kervia-logo-dark.svg">
+    <source media="(prefers-color-scheme: light)" srcset="assets/brand/kervia-logo-clair.svg">
+    <img src="assets/brand/kervia-logo-clair.svg" alt="Kervia" width="232">
+  </picture>
+</p>
+
 # Kervia Humanizer FR/EN
+
+[Français](README.md) · [English](README.en.md)
 
 **Version expérimentale : relecture humaine nécessaire avant publication.** Les exemples du benchmark montrent aussi des limites de style et de portée.
 
-Réviser un texte français ou anglais sans perdre les faits, les réserves et la voix de son auteur. Le skill sert aussi à rédiger depuis des notes fournies. Il ne cherche pas à tromper les détecteurs d’IA.
+Un skill Kervia pour réviser les textes français et anglais : retirer les formulations creuses, préserver les informations et garder la voix de l’auteur. Il peut aussi rédiger depuis des notes fournies. Son objectif est la qualité de lecture, pas le contournement des détecteurs d’IA.
 
 **Inspiré de [blader/humanizer](https://github.com/blader/humanizer), par Siqi Chen.** Nos règles d’exécution et notre contrôle local ont été rédigés pour ce projet. Le fichier amont est conservé séparément, inchangé, uniquement pour reproduire le benchmark. Voir les [attributions](THIRD_PARTY_NOTICES.md).
-
-[English documentation](README.en.md)
 
 ## Ce qui change dans cette approche
 
@@ -24,7 +32,7 @@ Installer uniquement le dossier `skills/kervia-humanizer-fr-en/`, qui contient l
 hermes skills install kerviaHerve/kervia-humanizer-fr-en/skills/kervia-humanizer-fr-en
 ```
 
- Avec Hermes, charger `kervia-humanizer-fr-en` puis la demande. Ne pas installer la baseline de comparaison comme un second skill.
+Avec Hermes, charger `kervia-humanizer-fr-en` puis la demande. Ne pas installer la baseline de comparaison comme un second skill.
 
 Exemples de demandes :
 
@@ -53,7 +61,7 @@ Il s’agit d’un petit essai de développement, sans jury humain indépendant.
 | Humanizer 3.1.0 complet | 23501 | 565 | 24066 |
 | Kervia : noyau + langue utile | 5099 | 614 | 5713 |
 
-Réduction observée : **78.30 % des tokens d’entrée** et **76.26 % du total**, sur les trois paires terminées. Les compteurs incluent le cache déclaré par le moteur : ce n’est pas une économie monétaire mesurée. Les réponses Kervia ne sont pas plus courtes en tokens au total ; la réduction vient du contexte d’instructions.
+Réduction observée : **78,30 % des tokens d’entrée** et **76,26 % du total**, sur les trois paires terminées. Les compteurs incluent le cache déclaré par le moteur : ce n’est pas une économie monétaire mesurée. Les réponses Kervia ne sont pas plus courtes en tokens au total ; la réduction vient du contexte d’instructions.
 
 La [lecture des sorties](benchmarks/QUALITY.md) signale aussi les limites : les deux skills préservent le texte déjà clair ; Humanizer produit des intertitres anglais plus précis et une formulation française de Kervia demande une vérification de portée. Les alertes de fréquence des noms restent visibles dans les données.
 
@@ -78,6 +86,10 @@ PYTHONDONTWRITEBYTECODE=1 python3 -m unittest discover -s tests -v
 Python 3.10 ou plus récent. Les tests sont hors ligne et ne lancent pas le modèle de benchmark. Un contrôle natif Hermes supplémentaire utilise uniquement des homes jetables, jamais les profils utilisateur.
 
 Les [contrôles de validation et leur portée](VALIDATION.md) sont documentés séparément.
+
+## Kervia et l’identité du dépôt
+
+Les logos clair et sombre viennent du kit de marque Kervia v02 fourni pour cette présentation. Ils restent hors du paquet installé ; ni le chargement du skill ni les mesures publiées ne changent. [Provenance des assets](assets/brand/README.md) · [Kervia](https://kervia.ch).
 
 ## Sources et licence
 

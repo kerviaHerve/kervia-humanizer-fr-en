@@ -1,0 +1,21 @@
+{
+  "kit": "2026-10-31__Codex__kervia-famille-applications__kit__v02.zip",
+  "kit_version": "v02",
+  "kit_date": "2026-10-31",
+  "kit_sha256": "3f03b6598a7bc845beec4d011279059823bf973f6a334ed199b297cd70a20b57",
+  "scope": "repository documentation only; no application or runtime migration",
+  "files": [
+    {
+      "file": "kervia-logo-clair.svg",
+      "source_in_kit": "KERVIA-KIT-GENERAL-v02/01-LOGOS/Kervia/svg/kervia-logo-clair.svg",
+      "sha256": "4999a4c6bbba2219bf4b8b344b9ee0bd6659741749c413ce58187adab35b18e7",
+      "modified": false
+    },
+    {
+      "file": "kervia-logo-dark.svg",
+      "source_in_kit": "KERVIA-KIT-GENERAL-v02/01-LOGOS/Kervia/svg/kervia-logo-dark.svg",
+      "sha256": "aa2ff45fc52b96b5510219a033268c6ddba9f7760c7badc89938d2d8272df45e",
+      "modified": false
+    }
+  ]
+}
