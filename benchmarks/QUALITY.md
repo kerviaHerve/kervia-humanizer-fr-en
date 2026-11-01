@@ -1,29 +1,31 @@
-# Lecture des sorties observées
+# Lecture des sorties du runtime texte seul 0.1.1
 
 Relecture par RITA, l’assistante IA qui a rédigé le candidat et les cas. Ce n’est ni un avis de lecteurs indépendants ni un jugement à l’aveugle. Aucun score de qualité en pourcentage n’est attribué.
 
 ## Français chargé
 
-Les deux sorties retirent les paragraphes d’emphase et gardent les informations de l’offre, les permissions, les prix, les limites et les inconnues. Leurs corps de texte sont très proches. Humanizer choisit un titre plus précis sur les invitations externes ; celui de Kervia reste plus général.
+Les conditions de l’offre, permissions, prix, limites et inconnues restent présentes dans les deux sorties. Humanizer les rend en paragraphes. Kervia ajoute des libellés en gras : ce choix peut aider au repérage, mais peut aussi surdécouper une courte annonce. Il ne constitue pas une preuve de meilleure rédaction.
 
-Le contrôle local émet une alerte pour chaque sortie parce que le nom Atelier Notes est moins répété. Le nom reste présent : cette baisse de fréquence n’est pas, à elle seule, une information perdue. L’alerte a été examinée, pas effacée du résultat brut.
+Une réserve de portée apparaît dans la sortie Kervia : la phrase sur le statut de partage des notes existantes peut se lire plus largement que la seule absence de partage automatique des notes privées mentionnée dans l’original. Cette formulation doit être revue avant un usage réel. Elle reste publiée telle qu’observée, sans correction destinée à améliorer le résultat du benchmark.
+
+Le contrôle local émet une alerte pour chaque sortie parce que le nom Atelier Notes est moins répété. Le nom est toujours présent. Cette alerte de fréquence ne vérifie pas la portée de la formulation décrite ci-dessus : la relecture sémantique reste nécessaire.
 
 ## Anglais chargé
 
-Les deux sorties conservent les contraintes du service, le contrôle manuel, les conditions tarifaires, la période d’essai, les limites d’export et la réserve sur les doublons.
+Les contraintes de service, le contrôle manuel, les conditions tarifaires, l’essai, les limites d’export et la réserve sur les doublons restent dans les deux textes.
 
-Humanizer remplace les intertitres par des intitulés informatifs, notamment Plans and limits et Exporting and duplicates. Kervia conserve A clear plan for moving forward et Looking ahead with confidence : ces titres restent génériques. C’est une faiblesse observée du candidat, pas un motif pour réécrire ou écarter sa sortie après mesure.
+Humanizer emploie des titres informatifs, notamment Plans and limits et Exporting and duplicates. Kervia conserve A clear plan for moving forward et Looking ahead with confidence : ces intertitres restent génériques. Humanizer fait mieux sur ce point précis.
 
-L’alerte de chaque sortie vient de la diminution des répétitions du nom Invoice Desk. Le nom lui-même est conservé.
+L’alerte de chaque sortie vient de la diminution des répétitions du nom Invoice Desk, pas de sa disparition.
 
 ## Français déjà clair
 
-Les deux méthodes rendent le texte identique à l’original en ignorant seulement les espaces ou sauts de ligne à l’extérieur. Aucun réagencement ni changement de condition n’a été relevé. Le contrôle local ne signale pas d’écart.
+Les deux méthodes rendent le texte inchangé, en ignorant seulement les espaces ou sauts de ligne à l’extérieur. Aucune alerte mécanique n’est émise. Ce contrôle n’est pas une validation juridique de l’exemple fictif.
 
 ## Interprétation
 
-Le candidat réduit fortement le volume de contexte compté sur ce pilote. Il ne gagne pas partout sur le style : les intertitres sont un point à améliorer dans une future version, avec un nouvel ensemble de validation.
+Le volume de contexte compté est nettement plus faible pour Kervia sur ce pilote. Cela ne démontre pas une qualité supérieure : les intertitres et la portée d’une reformulation restent des limites observées.
 
-Les six sorties initiales sont publiées sans retouche. Il n’y a pas eu de boucle de génération jusqu’à un résultat favorable. Les observations de fidélité ci-dessus restent une relecture de développement, non une certification sémantique ou une mesure statistique de préférence.
+Les six sorties actuelles sont publiées sans retouche. Les trois sorties Humanizer sont identiques à celles du pilote précédent. Le passage au runtime texte seul a nécessité une nouvelle mesure ; les données précédentes et leur lecture restent dans [l’historique](history/README.md), au commit d’origine.
 
-Le cache est détaillé dans [les résultats](results/qwen36-16k-2026-11-01.md). Les tokens logiques d’entrée ne se convertissent pas directement en argent ou en opérations de calcul.
+Les règles d’édition n’ont pas été ajustées après lecture des sorties pour remporter le test. Le changement porte sur la frontière d’installation et la suppression d’une dépendance d’exécution facultative. Le cache est détaillé dans [les mesures](results/qwen36-text-runtime-2026-11-01.md). Aucune économie monétaire ni authenticité humaine n’est déduite de ces tokens.

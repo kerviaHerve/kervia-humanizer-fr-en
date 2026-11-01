@@ -23,6 +23,7 @@ import urllib.request
 
 ROOT = Path(__file__).resolve().parents[1]
 BENCH = ROOT / 'benchmarks'
+RUNTIME = ROOT / 'skills/kervia-humanizer-fr-en'
 COMMON_SYSTEM = (
     'You are a writing editor applying the attached skill. The common output '
     'contract overrides default output-format suggestions: return only the final '
@@ -53,7 +54,7 @@ def instruction(arm: str, language: str) -> tuple[str, dict]:
         if sha(files[0].read_text(encoding='utf-8')) != metadata['sha256']:
             raise ValueError('Upstream baseline hash mismatch.')
     elif arm == 'kervia':
-        files = [ROOT / 'SKILL.md', ROOT / f'references/{language}.md']
+        files = [RUNTIME / 'SKILL.md', RUNTIME / f'references/{language}.md']
     else:
         raise ValueError('Unknown comparison arm.')
     chunks = [p.read_text(encoding='utf-8') for p in files]

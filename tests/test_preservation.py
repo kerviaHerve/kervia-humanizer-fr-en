@@ -13,6 +13,7 @@ import unittest
 
 REPO = Path(__file__).resolve().parents[1]
 PKG = REPO
+SKILL = REPO / 'skills/kervia-humanizer-fr-en/SKILL.md'
 SCRIPT = PKG / 'scripts/check_preservation.py'
 spec = importlib.util.spec_from_file_location('editorial_preservation', SCRIPT)
 assert spec and spec.loader
@@ -196,7 +197,7 @@ class PreservationTests(unittest.TestCase):
 
 class SkillPackageTests(unittest.TestCase):
     def test_main_file_contract(self):
-        text = (PKG / 'SKILL.md').read_text(encoding='utf-8')
+        text = SKILL.read_text(encoding='utf-8')
         self.assertTrue(text.startswith('---\n'))
         frontmatter, body = text[4:].split('\n---\n', 1)
         fields = dict(re.findall(r'(?m)^([a-z_]+):\s*(.+)$', frontmatter))

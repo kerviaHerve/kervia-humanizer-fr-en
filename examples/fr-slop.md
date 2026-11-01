@@ -43,13 +43,19 @@ Pendant la bêta, chaque espace peut partager au maximum 5 notes. Cette limite s
 ## Après : kervia
 
 ~~~~text
-# Atelier Notes : nouvelles fonctionnalités de collaboration
+# Atelier Notes : partage de notes avec des invités externes
 
-À partir du 12 novembre, les espaces de travail disposant de l’offre Équipe pourront inviter jusqu’à 3 personnes externes sur une note. Ces invités pourront lire la note et la commenter. Ils ne pourront pas la modifier et ne pourront pas inviter d’autres personnes.
+À partir du 12 novembre, les espaces de travail disposant de l’offre Équipe pourront inviter jusqu’à 3 personnes externes sur une note.
 
-L’offre Équipe coûte 39 CHF par mois avec facturation mensuelle, hors TVA. Cette fonction est incluse dans ce prix et n’est pas disponible avec l’offre Gratuite.
+**Droits des invités**
+Les invités peuvent lire la note et y commenter. Ils ne peuvent ni modifier la note ni inviter d’autres personnes.
 
-Seul le propriétaire de l’espace de travail peut retirer un invité. Ce retrait supprime aussi son accès aux commentaires déjà publiés. Les notes privées existantes restent privées tant que leur propriétaire ne les partage pas explicitement. L’arrivée de cette fonction ne les partage donc pas automatiquement.
+**Conditions tarifaires**
+L’offre Équipe coûte 39 CHF par mois avec facturation mensuelle, hors TVA. Cette fonctionnalité est incluse dans ce prix et n’est pas disponible avec l’offre Gratuite.
 
-Pendant la bêta, chaque espace peut partager au maximum 5 notes. Cette limite s’applique aux abonnements mensuels et annuels. L’export est proposé uniquement en CSV. Aucun mode hors ligne n’est disponible. La date d’arrivée d’autres formats d’export n’est pas encore fixée.
+**Gestion des accès**
+Seul le propriétaire de l’espace de travail peut retirer un invité. Ce retrait supprime également son accès aux commentaires déjà publiés. Les notes privées existantes restent privées tant que leur propriétaire ne les partage pas explicitement. L’activation de cette fonctionnalité ne modifie pas le statut de partage des notes existantes.
+
+**Limitations de la phase bêta**
+Pendant la période bêta, chaque espace peut partager au maximum 5 notes. Cette limite s’applique aux abonnements mensuels et annuels. L’export est proposé uniquement au format CSV. Aucun mode hors ligne n’est disponible. La date d’arrivée d’autres formats d’export n’est pas encore fixée.
 ~~~~

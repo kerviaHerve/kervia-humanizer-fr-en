@@ -34,10 +34,10 @@ class BenchmarkContractTests(unittest.TestCase):
 
     def test_only_one_language_module_is_loaded(self):
         text, files = bench.instruction('kervia', 'fr')
-        self.assertEqual(set(files), {'SKILL.md', 'references/fr.md'})
-        self.assertIn((ROOT / 'references/fr.md').read_text(), text)
-        self.assertNotIn((ROOT / 'references/en.md').read_text(), text)
-        self.assertNotIn((ROOT / 'references/deep-edit.md').read_text(), text)
+        self.assertEqual(set(files), {'skills/kervia-humanizer-fr-en/SKILL.md', 'skills/kervia-humanizer-fr-en/references/fr.md'})
+        self.assertIn((bench.RUNTIME / 'references/fr.md').read_text(), text)
+        self.assertNotIn((bench.RUNTIME / 'references/en.md').read_text(), text)
+        self.assertNotIn((bench.RUNTIME / 'references/deep-edit.md').read_text(), text)
 
     def test_invalid_arm_or_language_is_rejected(self):
         for arm, language in [('unknown', 'fr'), ('kervia', 'xx')]:
@@ -100,15 +100,25 @@ class BenchmarkContractTests(unittest.TestCase):
 
     def test_public_runtime_has_one_skill_and_standard_metadata(self):
         skills = list(ROOT.rglob('SKILL.md'))
-        self.assertEqual(skills, [ROOT / 'SKILL.md'])
+        self.assertEqual(skills, [bench.RUNTIME / 'SKILL.md'])
         text = skills[0].read_text()
         self.assertIn('name: kervia-humanizer-fr-en', text)
         self.assertIn('license: MIT', text)
-        self.assertIn('version: "0.1.0"', text)
+        self.assertIn('version: "0.1.1"', text)
         for name in ['SKILL.md', 'references/fr.md', 'references/en.md', 'references/deep-edit.md']:
-            content = (ROOT / name).read_text()
+            content = (bench.RUNTIME / name).read_text()
             self.assertNotIn('/home/', content)
             self.assertNotIn('/STORAGE', content)
+
+    def test_installable_runtime_is_a_closed_text_only_package(self):
+        expected = {'SKILL.md', 'LICENSE', 'THIRD_PARTY_NOTICES.md',
+                    'references/fr.md', 'references/en.md', 'references/deep-edit.md'}
+        actual = {str(p.relative_to(bench.RUNTIME)) for p in bench.RUNTIME.rglob('*') if p.is_file()}
+        self.assertEqual(actual, expected)
+        core = (bench.RUNTIME / 'SKILL.md').read_text()
+        self.assertNotIn('check_preservation.py', core)
+        self.assertNotIn('run_compare.py', core)
+        self.assertIn('text instructions only', core)
 
     def test_attribution_and_licences_are_present(self):
         self.assertIn('Inspired by', (ROOT / 'THIRD_PARTY_NOTICES.md').read_text())

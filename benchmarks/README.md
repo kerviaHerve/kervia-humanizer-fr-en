@@ -29,6 +29,10 @@ Les fichiers existants ne sont pas écrasés. Une erreur est conservée et inter
 
 Les observations publiées ont utilisé un modèle Qwen3.6-35B-A3B quantifié Q4_K_M sur un serveur llama.cpp temporaire, texte seul, contexte demandé de 16 384 tokens, reasoning budget 0. Un projecteur vision n’était pas utile pour ce travail. Les détails exposés sont enregistrés séparément ; les paramètres privés de la machine ne sont pas distribués.
 
+## Runtime texte seul et historique
+
+Le paquet installé vit dans `skills/kervia-humanizer-fr-en/` et ne contient aucun code exécutable. Le contrôleur local est utilisé séparément par le banc d’essai ; son exécution n’est pas une instruction automatique du skill. Après ce changement de frontière, les appels ont été remesurés. Le premier pilote reste dans [l’historique](history/README.md), lié à son commit d’origine ; ses chiffres ne sont pas ceux du runtime modifié.
+
 ## Mesures
 
 - `prompt_tokens`, `completion_tokens` et `total_tokens` proviennent du champ `usage` réellement retourné.

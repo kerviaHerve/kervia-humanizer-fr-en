@@ -2,7 +2,7 @@
 
 This repository contains a public bilingual writing skill, its local checker and reproducible experiments.
 
-- Keep one runtime `SKILL.md` at the root. Vendored benchmark baselines are labelled data, not additional installable skills.
+- Keep one runtime `SKILL.md` under `skills/kervia-humanizer-fr-en/`. Its installation is text-only; project scripts, tests and baselines stay outside it.
 - Publish no secrets, private configurations, user conversations, unpublished client text or machine-specific paths.
 - Main instructions and one language module form the normal editing path. Benchmarks and examples are not runtime context.
 - Preserve attributed inspirations and third-party licences. Do not present a baseline as our own implementation.

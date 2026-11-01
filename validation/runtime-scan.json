@@ -1,0 +1,12 @@
+{
+  "scanner": "skills-guard-v10",
+  "source": "kerviaHerve/kervia-humanizer-fr-en/skills/kervia-humanizer-fr-en",
+  "trust_level": "community",
+  "verdict": "safe",
+  "finding_count": 0,
+  "force_override": false,
+  "allowed": true,
+  "bundle_sha256": "e6ea73061b94d66a12f9f8133d7336fbbd400f76aa6d663555d9724a44342938",
+  "scanned_at": "2026-11-01T13:50:30.946621+00:00",
+  "scope": "text-only installable package, not the developer repository"
+}

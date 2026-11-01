@@ -1,5 +1,7 @@
 # Kervia Humanizer FR/EN
 
+**Version expérimentale : relecture humaine nécessaire avant publication.** Les exemples du benchmark montrent aussi des limites de style et de portée.
+
 Réviser un texte français ou anglais sans perdre les faits, les réserves et la voix de son auteur. Le skill sert aussi à rédiger depuis des notes fournies. Il ne cherche pas à tromper les détecteurs d’IA.
 
 **Inspiré de [blader/humanizer](https://github.com/blader/humanizer), par Siqi Chen.** Nos règles d’exécution et notre contrôle local ont été rédigés pour ce projet. Le fichier amont est conservé séparément, inchangé, uniquement pour reproduire le benchmark. Voir les [attributions](THIRD_PARTY_NOTICES.md).
@@ -16,10 +18,10 @@ Les informations matérielles sont protégées : acteurs, quantités, unités, d
 
 ## Utiliser le skill
 
-Installer le dossier contenant `SKILL.md` selon la méthode de ton agent compatible Agent Skills. Avec le CLI Hermes :
+Installer uniquement le dossier `skills/kervia-humanizer-fr-en/`, qui contient le `SKILL.md` et ses références texte. Le banc d’essai et le code du dépôt ne sont pas des dépendances installées. Avec le CLI Hermes :
 
 ```text
-hermes skills install kerviaHerve/kervia-humanizer-fr-en
+hermes skills install kerviaHerve/kervia-humanizer-fr-en/skills/kervia-humanizer-fr-en
 ```
 
  Avec Hermes, charger `kervia-humanizer-fr-en` puis la demande. Ne pas installer la baseline de comparaison comme un second skill.
@@ -36,8 +38,8 @@ La règle maison évite les tirets cadratins en prose nouvelle. Les citations ex
 
 Le [protocole](benchmarks/README.md) compare le SKILL.md intégral de Humanizer 3.1.0 à notre noyau accompagné du seul module utile. Même texte, même modèle, même consigne et contextes de messages séparés. Les tokens sont lus dans la réponse du moteur, pas estimés à partir de mots.
 
-- [Mesures et limites](benchmarks/results/qwen36-16k-2026-11-01.md)
-- [Données et sorties finales brutes](benchmarks/results/qwen36-16k-2026-11-01.json)
+- [Mesures et limites](benchmarks/results/qwen36-text-runtime-2026-11-01.md)
+- [Données et sorties finales brutes](benchmarks/results/qwen36-text-runtime-2026-11-01.json)
 - [Exemple français : avant, Humanizer, Kervia](examples/fr-slop.md)
 - [Exemple anglais : avant, Humanizer, Kervia](examples/en-slop.md)
 - [Contrôle sur un texte français déjà clair](examples/fr-clean.md)
@@ -49,13 +51,15 @@ Il s’agit d’un petit essai de développement, sans jury humain indépendant.
 | Chemin | Entrée | Sortie | Total |
 |---|---:|---:|---:|
 | Humanizer 3.1.0 complet | 23501 | 565 | 24066 |
-| Kervia : noyau + langue utile | 5192 | 574 | 5766 |
+| Kervia : noyau + langue utile | 5099 | 614 | 5713 |
 
-Réduction observée : **77.91 % des tokens d’entrée** et **76.04 % du total**, sur les trois paires terminées. Les compteurs incluent le cache déclaré par le moteur : ce n’est pas une économie monétaire mesurée. Les réponses Kervia ne sont pas plus courtes en tokens au total ; la réduction vient du contexte d’instructions.
+Réduction observée : **78.30 % des tokens d’entrée** et **76.26 % du total**, sur les trois paires terminées. Les compteurs incluent le cache déclaré par le moteur : ce n’est pas une économie monétaire mesurée. Les réponses Kervia ne sont pas plus courtes en tokens au total ; la réduction vient du contexte d’instructions.
 
-La [lecture des sorties](benchmarks/QUALITY.md) signale aussi les limites : les deux skills préservent le texte déjà clair et Humanizer produit des intertitres anglais plus précis sur cet exemple. Les alertes de fréquence des noms restent visibles dans les données.
+La [lecture des sorties](benchmarks/QUALITY.md) signale aussi les limites : les deux skills préservent le texte déjà clair ; Humanizer produit des intertitres anglais plus précis et une formulation française de Kervia demande une vérification de portée. Les alertes de fréquence des noms restent visibles dans les données.
 
 ## Contrôle local facultatif
+
+Cet outil reste dans le dépôt, hors du paquet installable. Son usage demande un choix explicite ; charger le skill ne le lance pas et ne le télécharge pas. Voir la [frontière d’installation](SECURITY.md).
 
 Le [script de préservation](references/checker.md) utilise seulement Python standard et ne modifie pas les fichiers :
 

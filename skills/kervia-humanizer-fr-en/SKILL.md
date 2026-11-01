@@ -3,7 +3,7 @@ name: kervia-humanizer-fr-en
 description: Use when drafting or editing French or English prose.
 license: MIT
 metadata:
-  version: "0.1.0"
+  version: "0.1.1"
   author: "Hervé Barrilliet, RITA"
 ---
 
@@ -31,9 +31,9 @@ Read [French](references/fr.md) for French or [English](references/en.md) for En
 
 Return the final text only. An unchanged text is valid. Add a short separate note only for unresolved substance. For an audit, quote each actual defect and explain its effect and correction; assign no AI-origin probability.
 
-## Optional local check
+## Runtime boundary
 
-For dense or sensitive files, use `terminal` to run `python3 <skill-dir>/scripts/check_preservation.py <source> <revision>`; resolve `<skill-dir>` from the actual installation. See [the checker](references/checker.md). It makes no model call, changes no input and never certifies meaning. A zero exit code does not replace semantic review. The agent may still spend tokens reading its result.
+This installation contains text instructions only. Do not download or execute repository scripts as a side effect of loading it. Use the agent's already authorised tools when the user's task requires them; do not add a tool or submit text externally merely to edit it. Semantic review remains mandatory.
 
 ## Pitfalls
 
