@@ -1,0 +1,81 @@
+{
+  "schema_version": 1,
+  "kind": "fictional_development_inputs_not_a_representative_corpus",
+  "cases": [
+    {
+      "id": "fr-slop",
+      "language": "fr",
+      "file": "cases/fr-slop.md",
+      "register": "professional product announcement",
+      "expected_intervention": "revise",
+      "required_strings": [
+        "Atelier Notes",
+        "12 novembre",
+        "Équipe",
+        "3",
+        "39 CHF",
+        "hors TVA",
+        "Gratuite",
+        "5",
+        "CSV"
+      ],
+      "material_checks": [
+        "Guests may read and comment but not edit or invite others.",
+        "Only the workspace owner may remove a guest.",
+        "Removal also removes access to existing comments.",
+        "Private notes are not automatically shared.",
+        "Beta limit applies to both monthly and annual subscriptions.",
+        "No offline mode; additional export formats have no fixed date."
+      ]
+    },
+    {
+      "id": "en-slop",
+      "language": "en",
+      "file": "cases/en-slop.md",
+      "register": "professional product announcement, British English",
+      "expected_intervention": "revise",
+      "required_strings": [
+        "Invoice Desk",
+        "PDF",
+        "15 MB",
+        "Team",
+        "29 USD",
+        "50",
+        "14 days",
+        "Free",
+        "CSV"
+      ],
+      "material_checks": [
+        "Unreadable scans require manual review.",
+        "No payments and no direct bank connection.",
+        "A person checks each invoice.",
+        "Monthly price excludes sales tax.",
+        "Trial requires no payment card.",
+        "Free plan excludes supplier grouping.",
+        "Web service only; no desktop application.",
+        "Possible duplicate is not confirmed duplicate; user must check.",
+        "Spreadsheet export date is not announced."
+      ]
+    },
+    {
+      "id": "fr-clean",
+      "language": "fr",
+      "file": "cases/fr-clean.md",
+      "register": "clear professional notice, tutoiement",
+      "expected_intervention": "unchanged_preferred",
+      "required_strings": [
+        "80 CHF",
+        "hors TVA",
+        "7 jours ouvrés",
+        "sauf si une pièce doit être recherchée",
+        "« Le devis ne vaut pas commande. »"
+      ],
+      "material_checks": [
+        "Inspection, written report and follow-up call remain distinct included items.",
+        "Repairs are quoted separately and may be declined.",
+        "Delay is measured from the visit, subject to the stated exception.",
+        "No automatic payment; accepting a repair is not required to receive the report."
+      ]
+    }
+  ]
+}

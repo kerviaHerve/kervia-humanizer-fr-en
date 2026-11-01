@@ -1,0 +1,466 @@
+{
+  "schema_version": "0.1.0",
+  "status": "synthetic development fixtures, not measured skill results",
+  "author": "RITA",
+  "created_on": "2026-11-01",
+  "cases": [
+    {
+      "id": "FR01",
+      "locale": "fr-FR",
+      "genre": "note interne",
+      "brief": "Révision légère, même langue et même sens. Aucun fait nouveau.",
+      "source_text": "La réalisation de la vérification des dossiers avant leur envoi est assurée par l’équipe comptable.",
+      "protected_strings": [
+        "équipe comptable"
+      ],
+      "assertions_to_preserve": [
+        "L’équipe comptable réalise la vérification.",
+        "La vérification précède l’envoi."
+      ],
+      "unchanged_is_preferred": false,
+      "illustrative_output": "L’équipe comptable vérifie les dossiers avant leur envoi.",
+      "review_note": ""
+    },
+    {
+      "id": "FR02",
+      "locale": "fr-CH",
+      "genre": "documentation",
+      "brief": "Révision légère, même langue et même sens. Aucun fait nouveau.",
+      "source_text": "Dans un monde en constante évolution, il est essentiel de noter que le portail accepte les fichiers PDF de 10 Mo maximum.",
+      "protected_strings": [
+        "PDF",
+        "10 Mo"
+      ],
+      "assertions_to_preserve": [
+        "Le portail accepte le format PDF.",
+        "La limite est de 10 Mo."
+      ],
+      "unchanged_is_preferred": false,
+      "illustrative_output": "Le portail accepte les fichiers PDF de 10 Mo maximum.",
+      "review_note": ""
+    },
+    {
+      "id": "FR03",
+      "locale": "fr-FR",
+      "genre": "information pratique",
+      "brief": "Révision légère, même langue et même sens. Aucun fait nouveau.",
+      "source_text": "Le remboursement peut prendre jusqu’à 30 jours après réception du dossier complet.",
+      "protected_strings": [
+        "peut",
+        "jusqu’à 30 jours",
+        "dossier complet"
+      ],
+      "assertions_to_preserve": [
+        "Le délai est une possibilité et non une garantie.",
+        "Le point de départ est la réception du dossier complet."
+      ],
+      "unchanged_is_preferred": true,
+      "illustrative_output": "Le remboursement peut prendre jusqu’à 30 jours après réception du dossier complet.",
+      "review_note": ""
+    },
+    {
+      "id": "FR04",
+      "locale": "fr-FR",
+      "genre": "explication financière",
+      "brief": "Révision légère, même langue et même sens. Aucun fait nouveau.",
+      "source_text": "Ce prêt n’est pas une subvention : il doit être remboursé.",
+      "protected_strings": [
+        "prêt",
+        "subvention",
+        "doit être remboursé"
+      ],
+      "assertions_to_preserve": [
+        "Il s’agit d’un prêt.",
+        "Il ne s’agit pas d’une subvention.",
+        "Le remboursement est obligatoire."
+      ],
+      "unchanged_is_preferred": true,
+      "illustrative_output": "Ce prêt n’est pas une subvention : il doit être remboursé.",
+      "review_note": "Le contraste a une fonction. Il ne doit pas être supprimé par une règle anti-formule."
+    },
+    {
+      "id": "FR05",
+      "locale": "fr-CH",
+      "genre": "procédure",
+      "brief": "Révision légère, même langue et même sens. Aucun fait nouveau.",
+      "source_text": "Joignez votre pièce d’identité, le contrat signé et la facture.",
+      "protected_strings": [
+        "pièce d’identité",
+        "contrat signé",
+        "facture"
+      ],
+      "assertions_to_preserve": [
+        "Trois pièces distinctes sont requises.",
+        "Le contrat doit être signé."
+      ],
+      "unchanged_is_preferred": true,
+      "illustrative_output": "Joignez votre pièce d’identité, le contrat signé et la facture.",
+      "review_note": "Le groupe de trois est un inventaire réel."
+    },
+    {
+      "id": "FR06",
+      "locale": "fr-FR",
+      "genre": "communiqué",
+      "brief": "Révision légère, même langue et même sens. Aucun fait nouveau.",
+      "source_text": "Notre solution révolutionnaire permet l’export au format CSV. Selon notre estimation interne, elle pourrait réduire de 12 % le temps de saisie.",
+      "protected_strings": [
+        "CSV",
+        "estimation interne",
+        "pourrait",
+        "12 %"
+      ],
+      "assertions_to_preserve": [
+        "Export CSV.",
+        "Gain estimé en interne, non vérifié indépendamment.",
+        "Le gain est potentiel.",
+        "Valeur de 12 %."
+      ],
+      "unchanged_is_preferred": false,
+      "illustrative_output": "L’outil permet l’export au format CSV. Selon notre estimation interne, il pourrait réduire de 12 % le temps de saisie.",
+      "review_note": "La révision conserve le statut de l’estimation ; elle ne l’a pas vérifiée. L’adjectif promotionnel peut être retiré."
+    },
+    {
+      "id": "FR07",
+      "locale": "fr-FR",
+      "genre": "avis",
+      "brief": "Révision légère, même langue et même sens. Aucun fait nouveau.",
+      "source_text": "Il convient de préciser qu’une erreur a été signalée lundi ; son origine reste inconnue.",
+      "protected_strings": [
+        "lundi",
+        "origine reste inconnue"
+      ],
+      "assertions_to_preserve": [
+        "Une erreur a été signalée lundi.",
+        "L’acteur du signalement n’est pas donné.",
+        "L’origine de l’erreur reste inconnue."
+      ],
+      "unchanged_is_preferred": false,
+      "illustrative_output": "Une erreur a été signalée lundi ; son origine reste inconnue.",
+      "review_note": "Ne pas inventer « notre équipe » ni le responsable de l’erreur."
+    },
+    {
+      "id": "FR08",
+      "locale": "fr-CH",
+      "genre": "documentation Markdown",
+      "brief": "Révision légère, même langue et même sens. Aucun fait nouveau.",
+      "source_text": "Il est important de noter que la commande `tool --dry-run` affiche un aperçu. Consultez le [guide](https://example.org/a?x=1&y=2).",
+      "protected_strings": [
+        "`tool --dry-run`",
+        "https://example.org/a?x=1&y=2"
+      ],
+      "assertions_to_preserve": [
+        "La commande affiche un aperçu.",
+        "La cible du lien et le code restent exacts."
+      ],
+      "unchanged_is_preferred": false,
+      "illustrative_output": "La commande `tool --dry-run` affiche un aperçu. Consultez le [guide](https://example.org/a?x=1&y=2).",
+      "review_note": ""
+    },
+    {
+      "id": "FR09",
+      "locale": "fr-FR",
+      "genre": "clause à conserver",
+      "brief": "Révision légère, même langue et même sens. Aucun fait nouveau.",
+      "source_text": "Le client doit notifier le défaut sous 10 jours ouvrés, sauf disposition légale contraire.",
+      "protected_strings": [
+        "doit",
+        "10 jours ouvrés",
+        "sauf disposition légale contraire"
+      ],
+      "assertions_to_preserve": [
+        "Obligation du client.",
+        "10 jours ouvrés, pas calendaires.",
+        "Exception pour la disposition légale contraire."
+      ],
+      "unchanged_is_preferred": true,
+      "illustrative_output": "Le client doit notifier le défaut sous 10 jours ouvrés, sauf disposition légale contraire.",
+      "review_note": "Le cas teste une conservation, pas une validation juridique de la clause fictive."
+    },
+    {
+      "id": "FR10",
+      "locale": "fr-FR",
+      "genre": "réponse de fil",
+      "brief": "Révision légère, même langue et même sens. Aucun fait nouveau.",
+      "source_text": "Dans le cadre de notre réflexion sur la proposition discutée, je tiens à souligner que je valide le devis A. Le devis B reste hors budget.",
+      "protected_strings": [
+        "devis A",
+        "devis B",
+        "hors budget"
+      ],
+      "assertions_to_preserve": [
+        "Le signataire valide A.",
+        "B reste hors budget."
+      ],
+      "unchanged_is_preferred": false,
+      "illustrative_output": "Je valide le devis A. Le devis B reste hors budget.",
+      "review_note": "La décision arrive en premier, sans perdre l’information sur B."
+    },
+    {
+      "id": "FR11",
+      "locale": "fr-FR",
+      "genre": "billet personnel",
+      "brief": "Révision légère, même langue et même sens. Aucun fait nouveau.",
+      "source_text": "Force est de constater que j’ai relu ce chapitre quatre fois. Je le trouve toujours trop sage, et je ne sais pas encore quoi en faire.",
+      "protected_strings": [
+        "quatre fois",
+        "trop sage",
+        "je ne sais pas encore"
+      ],
+      "assertions_to_preserve": [
+        "Le signataire a relu le chapitre quatre fois.",
+        "Il le trouve trop sage.",
+        "Il n’a pas encore de solution."
+      ],
+      "unchanged_is_preferred": false,
+      "illustrative_output": "J’ai relu ce chapitre quatre fois. Je le trouve toujours trop sage, et je ne sais pas encore quoi en faire.",
+      "review_note": "Garder l’ambivalence ; ne pas inventer le passage qui l’aurait touché."
+    },
+    {
+      "id": "FR12",
+      "locale": "fr-CA",
+      "genre": "message bref",
+      "brief": "Révision légère, même langue et même sens. Aucun fait nouveau.",
+      "source_text": "Vous avez terminé? Merci!",
+      "protected_strings": [
+        "terminé?",
+        "Merci!"
+      ],
+      "assertions_to_preserve": [
+        "Question sur l’achèvement.",
+        "Remerciement."
+      ],
+      "unchanged_is_preferred": true,
+      "illustrative_output": "Vous avez terminé? Merci!",
+      "review_note": "Ne pas imposer une espace française de France devant ? et !."
+    },
+    {
+      "id": "EN01",
+      "locale": "en-GB",
+      "genre": "internal note",
+      "brief": "Light edit. Keep the language, meaning and every material fact. Add no facts.",
+      "source_text": "The completion of the review of the applications before submission is carried out by the finance team.",
+      "protected_strings": [
+        "finance team",
+        "before submission"
+      ],
+      "assertions_to_preserve": [
+        "The finance team performs the review.",
+        "Review occurs before submission."
+      ],
+      "unchanged_is_preferred": false,
+      "illustrative_output": "The finance team reviews the applications before submission.",
+      "review_note": ""
+    },
+    {
+      "id": "EN02",
+      "locale": "en-US",
+      "genre": "product documentation",
+      "brief": "Light edit. Keep the language, meaning and every material fact. Add no facts.",
+      "source_text": "In today’s rapidly evolving digital landscape, it is important to note that the portal accepts PDF files up to 10 MB.",
+      "protected_strings": [
+        "PDF",
+        "up to 10 MB"
+      ],
+      "assertions_to_preserve": [
+        "PDF is accepted.",
+        "The upper limit is 10 MB."
+      ],
+      "unchanged_is_preferred": false,
+      "illustrative_output": "The portal accepts PDF files up to 10 MB.",
+      "review_note": ""
+    },
+    {
+      "id": "EN03",
+      "locale": "en-US",
+      "genre": "service notice",
+      "brief": "Light edit. Keep the language, meaning and every material fact. Add no facts.",
+      "source_text": "Refunds may take up to 30 days after we receive the complete application.",
+      "protected_strings": [
+        "may",
+        "up to 30 days",
+        "complete application"
+      ],
+      "assertions_to_preserve": [
+        "May, not a fixed guarantee.",
+        "Up to 30 days.",
+        "Clock starts on receipt of the complete application."
+      ],
+      "unchanged_is_preferred": true,
+      "illustrative_output": "Refunds may take up to 30 days after we receive the complete application.",
+      "review_note": ""
+    },
+    {
+      "id": "EN04",
+      "locale": "en-GB",
+      "genre": "financial explanation",
+      "brief": "Light edit. Keep the language, meaning and every material fact. Add no facts.",
+      "source_text": "This is a loan, not a grant. You must repay it.",
+      "protected_strings": [
+        "loan",
+        "not a grant",
+        "must repay"
+      ],
+      "assertions_to_preserve": [
+        "Loan, not grant.",
+        "Repayment is required."
+      ],
+      "unchanged_is_preferred": true,
+      "illustrative_output": "This is a loan, not a grant. You must repay it.",
+      "review_note": ""
+    },
+    {
+      "id": "EN05",
+      "locale": "en-US",
+      "genre": "procedure",
+      "brief": "Light edit. Keep the language, meaning and every material fact. Add no facts.",
+      "source_text": "Attach your ID, the signed contract, and the invoice.",
+      "protected_strings": [
+        "ID",
+        "signed contract",
+        "invoice"
+      ],
+      "assertions_to_preserve": [
+        "Three distinct required documents.",
+        "Contract must be signed."
+      ],
+      "unchanged_is_preferred": true,
+      "illustrative_output": "Attach your ID, the signed contract, and the invoice.",
+      "review_note": ""
+    },
+    {
+      "id": "EN06",
+      "locale": "en-GB",
+      "genre": "research note",
+      "brief": "Light edit. Keep the language, meaning and every material fact. Add no facts.",
+      "source_text": "The survey found an association between longer commutes and lower satisfaction. It did not establish causation.",
+      "protected_strings": [
+        "association",
+        "did not establish causation"
+      ],
+      "assertions_to_preserve": [
+        "Association only.",
+        "Longer commutes and lower satisfaction.",
+        "No established causation."
+      ],
+      "unchanged_is_preferred": true,
+      "illustrative_output": "The survey found an association between longer commutes and lower satisfaction. It did not establish causation.",
+      "review_note": ""
+    },
+    {
+      "id": "EN07",
+      "locale": "en-US",
+      "genre": "notice",
+      "brief": "Light edit. Keep the language, meaning and every material fact. Add no facts.",
+      "source_text": "It is important to note that an error was reported on Monday. Its cause is still unknown.",
+      "protected_strings": [
+        "Monday",
+        "cause is still unknown"
+      ],
+      "assertions_to_preserve": [
+        "An error was reported on Monday.",
+        "Reporter is not identified.",
+        "Cause is still unknown."
+      ],
+      "unchanged_is_preferred": false,
+      "illustrative_output": "An error was reported on Monday. Its cause is still unknown.",
+      "review_note": ""
+    },
+    {
+      "id": "EN08",
+      "locale": "en-US",
+      "genre": "Markdown documentation",
+      "brief": "Light edit. Keep the language, meaning and every material fact. Add no facts.",
+      "source_text": "Here’s what you need to know: `tool --dry-run` shows a preview. Read the [guide](https://example.org/a?x=1&y=2).",
+      "protected_strings": [
+        "`tool --dry-run`",
+        "https://example.org/a?x=1&y=2"
+      ],
+      "assertions_to_preserve": [
+        "Command produces a preview.",
+        "Code and link target stay exact."
+      ],
+      "unchanged_is_preferred": false,
+      "illustrative_output": "`tool --dry-run` shows a preview. Read the [guide](https://example.org/a?x=1&y=2).",
+      "review_note": ""
+    },
+    {
+      "id": "EN09",
+      "locale": "en-GB",
+      "genre": "legal wording",
+      "brief": "Light edit. Keep the language, meaning and every material fact. Add no facts.",
+      "source_text": "The customer must report the defect within 10 working days, unless applicable law provides otherwise.",
+      "protected_strings": [
+        "must",
+        "10 working days",
+        "unless applicable law provides otherwise"
+      ],
+      "assertions_to_preserve": [
+        "Customer obligation.",
+        "10 working days, not calendar days.",
+        "Applicable-law exception remains."
+      ],
+      "unchanged_is_preferred": true,
+      "illustrative_output": "The customer must report the defect within 10 working days, unless applicable law provides otherwise.",
+      "review_note": ""
+    },
+    {
+      "id": "EN10",
+      "locale": "en-US",
+      "genre": "thread reply",
+      "brief": "Light edit. Keep the language, meaning and every material fact. Add no facts.",
+      "source_text": "In light of the proposal we have been discussing, I would like to emphasize that I approve quote A. Quote B is still over budget.",
+      "protected_strings": [
+        "quote A",
+        "Quote B",
+        "over budget"
+      ],
+      "assertions_to_preserve": [
+        "The writer approves A.",
+        "B remains over budget."
+      ],
+      "unchanged_is_preferred": false,
+      "illustrative_output": "I approve quote A. Quote B is still over budget.",
+      "review_note": ""
+    },
+    {
+      "id": "EN11",
+      "locale": "en-GB",
+      "genre": "personal essay",
+      "brief": "Light edit. Keep the language, meaning and every material fact. Add no facts.",
+      "source_text": "At the end of the day, I have read this chapter four times. I still find it too tidy, and I do not know what to do with it yet.",
+      "protected_strings": [
+        "four times",
+        "too tidy",
+        "do not know"
+      ],
+      "assertions_to_preserve": [
+        "Read four times.",
+        "Still judged too tidy.",
+        "Writer has no solution yet."
+      ],
+      "unchanged_is_preferred": false,
+      "illustrative_output": "I have read this chapter four times. I still find it too tidy, and I do not know what to do with it yet.",
+      "review_note": "Do not replace uncertainty with a new opinion or a fabricated memory."
+    },
+    {
+      "id": "EN12",
+      "locale": "en-GB",
+      "genre": "regional spelling",
+      "brief": "Light edit. Keep the language, meaning and every material fact. Add no facts.",
+      "source_text": "Our organisation will analyse the results on 6 November.",
+      "protected_strings": [
+        "organisation",
+        "analyse",
+        "6 November"
+      ],
+      "assertions_to_preserve": [
+        "The organisation will analyse results.",
+        "Date remains 6 November.",
+        "British spelling is intentional."
+      ],
+      "unchanged_is_preferred": true,
+      "illustrative_output": "Our organisation will analyse the results on 6 November.",
+      "review_note": ""
+    }
+  ]
+}

@@ -1,0 +1,9 @@
+{
+  "model_alias": "qwen3.6-35b-a3b",
+  "weight_file": "Qwen3.6-35B-A3B-UD-Q4_K_M.gguf",
+  "context_requested": 16384,
+  "vision_projector": false,
+  "reasoning_budget": 0,
+  "build_info": "b11160-a3c12db9d",
+  "actual_context": 16384
+}

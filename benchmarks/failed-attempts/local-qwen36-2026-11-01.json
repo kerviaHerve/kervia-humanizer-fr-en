@@ -1,0 +1,129 @@
+{
+  "schema_version": 1,
+  "created_at": "2026-11-01T12:21:53.401590+00:00",
+  "experiment": "paired_prompt_pilot_not_full_agent_benchmark",
+  "model_requested": "qwen3.6-35b-a3b",
+  "requested_settings": {
+    "temperature": 0,
+    "seed": 42,
+    "max_tokens": 2200,
+    "chat_template_kwargs": {
+      "enable_thinking": false
+    }
+  },
+  "endpoint_kind": "local OpenAI-compatible",
+  "cases": [
+    {
+      "id": "fr-slop",
+      "language": "fr",
+      "file": "cases/fr-slop.md",
+      "register": "professional product announcement",
+      "expected_intervention": "revise",
+      "required_strings": [
+        "Atelier Notes",
+        "12 novembre",
+        "Équipe",
+        "3",
+        "39 CHF",
+        "hors TVA",
+        "Gratuite",
+        "5",
+        "CSV"
+      ],
+      "material_checks": [
+        "Guests may read and comment but not edit or invite others.",
+        "Only the workspace owner may remove a guest.",
+        "Removal also removes access to existing comments.",
+        "Private notes are not automatically shared.",
+        "Beta limit applies to both monthly and annual subscriptions.",
+        "No offline mode; additional export formats have no fixed date."
+      ]
+    },
+    {
+      "id": "en-slop",
+      "language": "en",
+      "file": "cases/en-slop.md",
+      "register": "professional product announcement, British English",
+      "expected_intervention": "revise",
+      "required_strings": [
+        "Invoice Desk",
+        "PDF",
+        "15 MB",
+        "Team",
+        "29 USD",
+        "50",
+        "14 days",
+        "Free",
+        "CSV"
+      ],
+      "material_checks": [
+        "Unreadable scans require manual review.",
+        "No payments and no direct bank connection.",
+        "A person checks each invoice.",
+        "Monthly price excludes sales tax.",
+        "Trial requires no payment card.",
+        "Free plan excludes supplier grouping.",
+        "Web service only; no desktop application.",
+        "Possible duplicate is not confirmed duplicate; user must check.",
+        "Spreadsheet export date is not announced."
+      ]
+    },
+    {
+      "id": "fr-clean",
+      "language": "fr",
+      "file": "cases/fr-clean.md",
+      "register": "clear professional notice, tutoiement",
+      "expected_intervention": "unchanged_preferred",
+      "required_strings": [
+        "80 CHF",
+        "hors TVA",
+        "7 jours ouvrés",
+        "sauf si une pièce doit être recherchée",
+        "« Le devis ne vaut pas commande. »"
+      ],
+      "material_checks": [
+        "Inspection, written report and follow-up call remain distinct included items.",
+        "Repairs are quoted separately and may be declined.",
+        "Delay is measured from the visit, subject to the stated exception.",
+        "No automatic payment; accepting a repair is not required to receive the report."
+      ]
+    }
+  ],
+  "records": [
+    {
+      "case": "fr-slop",
+      "language": "fr",
+      "arm": "humanizer",
+      "source_sha256": "daac9dff3157342a6a6a029a702a715e193b926ae45d23a39df3a3818417e979",
+      "instruction_files": {
+        "benchmarks/baselines/humanizer-3.1.0.md": "0612f1dfb1672b0ea9b97e139bf1f06cabe98d8b27424fe8ff01e1fb4cc99cad"
+      },
+      "system_sha256": "19576a6d5d627ff53d14fb09e9ec22f6ef6230d7cb55f1160dcabd52e329e3c2",
+      "task_sha256": "c009ae2b3812140776821e3d4f3436cb0c45a4937d2c8fff4e803edc52fdbddf",
+      "status": "failed",
+      "error_type": "HTTPError",
+      "http_status": 500
+    }
+  ],
+  "human_judges": 0,
+  "detectors_run": false,
+  "summary": {
+    "all_pairs_completed": false,
+    "totals": {
+      "humanizer": {
+        "prompt_tokens": 0,
+        "completion_tokens": 0,
+        "total_tokens": 0,
+        "completed_requests": 0
+      },
+      "kervia": {
+        "prompt_tokens": 0,
+        "completion_tokens": 0,
+        "total_tokens": 0,
+        "completed_requests": 0
+      }
+    },
+    "reduction_percent": null,
+    "quality_or_authorship_verified": false
+  }
+}

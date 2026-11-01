@@ -1,0 +1,411 @@
+{
+  "schema_version": 1,
+  "created_at": "2026-11-01T12:34:54.182292+00:00",
+  "experiment": "paired_prompt_pilot_not_full_agent_benchmark",
+  "model_requested": "qwen3.6-35b-a3b",
+  "requested_settings": {
+    "temperature": 0,
+    "seed": 42,
+    "max_tokens": 2200,
+    "chat_template_kwargs": {
+      "enable_thinking": false
+    }
+  },
+  "endpoint_kind": "local OpenAI-compatible",
+  "cases": [
+    {
+      "id": "fr-slop",
+      "language": "fr",
+      "file": "cases/fr-slop.md",
+      "register": "professional product announcement",
+      "expected_intervention": "revise",
+      "required_strings": [
+        "Atelier Notes",
+        "12 novembre",
+        "Équipe",
+        "3",
+        "39 CHF",
+        "hors TVA",
+        "Gratuite",
+        "5",
+        "CSV"
+      ],
+      "material_checks": [
+        "Guests may read and comment but not edit or invite others.",
+        "Only the workspace owner may remove a guest.",
+        "Removal also removes access to existing comments.",
+        "Private notes are not automatically shared.",
+        "Beta limit applies to both monthly and annual subscriptions.",
+        "No offline mode; additional export formats have no fixed date."
+      ]
+    },
+    {
+      "id": "en-slop",
+      "language": "en",
+      "file": "cases/en-slop.md",
+      "register": "professional product announcement, British English",
+      "expected_intervention": "revise",
+      "required_strings": [
+        "Invoice Desk",
+        "PDF",
+        "15 MB",
+        "Team",
+        "29 USD",
+        "50",
+        "14 days",
+        "Free",
+        "CSV"
+      ],
+      "material_checks": [
+        "Unreadable scans require manual review.",
+        "No payments and no direct bank connection.",
+        "A person checks each invoice.",
+        "Monthly price excludes sales tax.",
+        "Trial requires no payment card.",
+        "Free plan excludes supplier grouping.",
+        "Web service only; no desktop application.",
+        "Possible duplicate is not confirmed duplicate; user must check.",
+        "Spreadsheet export date is not announced."
+      ]
+    },
+    {
+      "id": "fr-clean",
+      "language": "fr",
+      "file": "cases/fr-clean.md",
+      "register": "clear professional notice, tutoiement",
+      "expected_intervention": "unchanged_preferred",
+      "required_strings": [
+        "80 CHF",
+        "hors TVA",
+        "7 jours ouvrés",
+        "sauf si une pièce doit être recherchée",
+        "« Le devis ne vaut pas commande. »"
+      ],
+      "material_checks": [
+        "Inspection, written report and follow-up call remain distinct included items.",
+        "Repairs are quoted separately and may be declined.",
+        "Delay is measured from the visit, subject to the stated exception.",
+        "No automatic payment; accepting a repair is not required to receive the report."
+      ]
+    }
+  ],
+  "records": [
+    {
+      "case": "fr-slop",
+      "language": "fr",
+      "arm": "humanizer",
+      "source_sha256": "daac9dff3157342a6a6a029a702a715e193b926ae45d23a39df3a3818417e979",
+      "instruction_files": {
+        "benchmarks/baselines/humanizer-3.1.0.md": "0612f1dfb1672b0ea9b97e139bf1f06cabe98d8b27424fe8ff01e1fb4cc99cad"
+      },
+      "system_sha256": "19576a6d5d627ff53d14fb09e9ec22f6ef6230d7cb55f1160dcabd52e329e3c2",
+      "task_sha256": "c009ae2b3812140776821e3d4f3436cb0c45a4937d2c8fff4e803edc52fdbddf",
+      "status": "completed",
+      "elapsed_seconds": 4.270662622991949,
+      "finish_reason": "stop",
+      "usage": {
+        "completion_tokens": 236,
+        "prompt_tokens": 7989,
+        "total_tokens": 8225,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        }
+      },
+      "model_reported": "qwen3.6-35b-a3b",
+      "output": "# Atelier Notes : invitations externes aux notes\n\nÀ partir du 12 novembre, les espaces de travail disposant de l’offre Équipe pourront inviter jusqu’à 3 personnes externes sur une note. Ces invités pourront lire la note et la commenter. Ils ne pourront pas la modifier et ne pourront pas inviter d’autres personnes. L’offre Équipe coûte 39 CHF par mois avec facturation mensuelle, hors TVA. Cette fonction est incluse dans ce prix et n’est pas disponible avec l’offre Gratuite.\n\nSeul le propriétaire de l’espace de travail peut retirer un invité. Ce retrait supprime aussi son accès aux commentaires déjà publiés. Les notes privées existantes restent privées tant que leur propriétaire ne les partage pas explicitement. L’arrivée de cette fonction ne les partage donc pas automatiquement.\n\nPendant la bêta, chaque espace peut partager au maximum 5 notes. Cette limite s’applique aux abonnements mensuels et annuels. L’export est proposé uniquement en CSV. Aucun mode hors ligne n’est disponible. La date d’arrivée d’autres formats d’export n’est pas encore fixée.",
+      "unchanged_ignoring_outer_whitespace": false,
+      "mechanical": {
+        "schema_version": 1,
+        "status": "review_required",
+        "semantic_review_required": true,
+        "meaning_verified": false,
+        "authorship_assessed": false,
+        "source_sha256": "daac9dff3157342a6a6a029a702a715e193b926ae45d23a39df3a3818417e979",
+        "output_sha256": "6b0dedbca556c1330341c7a4d81b784afe243c70df5d7cf795a35b668ffc88ed",
+        "issue_count": 1,
+        "issues": [
+          {
+            "kind": "manifest_pin",
+            "fragment_sha256": "67cda4d9529a55b9e9a921a8c2f120056a1bd5859f9af58183ff270abd9af925",
+            "source_count": 3,
+            "output_count": 1,
+            "reason": "explicit_literal_count_changed"
+          }
+        ],
+        "limits": [
+          "Does not validate facts, attribution, units, negation, scope or commitments.",
+          "Same literal inventory can accompany a different meaning.",
+          "Does not parse all Markdown, HTML, citations or mathematical notation.",
+          "Reformatting numbers can trigger review even when values are equivalent.",
+          "A manifest pin checks literal presence and count, not location or meaning."
+        ]
+      }
+    },
+    {
+      "case": "fr-slop",
+      "language": "fr",
+      "arm": "kervia",
+      "source_sha256": "daac9dff3157342a6a6a029a702a715e193b926ae45d23a39df3a3818417e979",
+      "instruction_files": {
+        "SKILL.md": "0c774df90d5f5afbcd513d7e73e55f492d05ca88d9b690afcbe5333d81dba49a",
+        "references/fr.md": "8718da202b2f8821082b650dfd7a0cd2e167add5a4c358754ccaa20e4057b7c0"
+      },
+      "system_sha256": "4c1bdfe8e03c98413feeb0775854768353281246f73945d172c7499df494e5f6",
+      "task_sha256": "c009ae2b3812140776821e3d4f3436cb0c45a4937d2c8fff4e803edc52fdbddf",
+      "status": "completed",
+      "elapsed_seconds": 2.1048219942022115,
+      "finish_reason": "stop",
+      "usage": {
+        "completion_tokens": 238,
+        "prompt_tokens": 1942,
+        "total_tokens": 2180,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        }
+      },
+      "model_reported": "qwen3.6-35b-a3b",
+      "output": "# Atelier Notes : nouvelles fonctionnalités de collaboration\n\nÀ partir du 12 novembre, les espaces de travail disposant de l’offre Équipe pourront inviter jusqu’à 3 personnes externes sur une note. Ces invités pourront lire la note et la commenter. Ils ne pourront pas la modifier et ne pourront pas inviter d’autres personnes.\n\nL’offre Équipe coûte 39 CHF par mois avec facturation mensuelle, hors TVA. Cette fonction est incluse dans ce prix et n’est pas disponible avec l’offre Gratuite.\n\nSeul le propriétaire de l’espace de travail peut retirer un invité. Ce retrait supprime aussi son accès aux commentaires déjà publiés. Les notes privées existantes restent privées tant que leur propriétaire ne les partage pas explicitement. L’arrivée de cette fonction ne les partage donc pas automatiquement.\n\nPendant la bêta, chaque espace peut partager au maximum 5 notes. Cette limite s’applique aux abonnements mensuels et annuels. L’export est proposé uniquement en CSV. Aucun mode hors ligne n’est disponible. La date d’arrivée d’autres formats d’export n’est pas encore fixée.",
+      "unchanged_ignoring_outer_whitespace": false,
+      "mechanical": {
+        "schema_version": 1,
+        "status": "review_required",
+        "semantic_review_required": true,
+        "meaning_verified": false,
+        "authorship_assessed": false,
+        "source_sha256": "daac9dff3157342a6a6a029a702a715e193b926ae45d23a39df3a3818417e979",
+        "output_sha256": "878da9c175c96a6b155b5ce1196cd5a7990263af605b9f314b9d5b86309f6daa",
+        "issue_count": 1,
+        "issues": [
+          {
+            "kind": "manifest_pin",
+            "fragment_sha256": "67cda4d9529a55b9e9a921a8c2f120056a1bd5859f9af58183ff270abd9af925",
+            "source_count": 3,
+            "output_count": 1,
+            "reason": "explicit_literal_count_changed"
+          }
+        ],
+        "limits": [
+          "Does not validate facts, attribution, units, negation, scope or commitments.",
+          "Same literal inventory can accompany a different meaning.",
+          "Does not parse all Markdown, HTML, citations or mathematical notation.",
+          "Reformatting numbers can trigger review even when values are equivalent.",
+          "A manifest pin checks literal presence and count, not location or meaning."
+        ]
+      }
+    },
+    {
+      "case": "en-slop",
+      "language": "en",
+      "arm": "kervia",
+      "source_sha256": "ebd5c9de4b2bf365240759f91bc062f4717e4e0ba523ac4cc0146b7f8bb736af",
+      "instruction_files": {
+        "SKILL.md": "0c774df90d5f5afbcd513d7e73e55f492d05ca88d9b690afcbe5333d81dba49a",
+        "references/en.md": "d65b62f9b96441ce8e4c16d9281ae5de53d6a17bd1a7272260577f12cce774ab"
+      },
+      "system_sha256": "3ed85c743b837d7c889dd9835ab2484ac3efdc0c6aca29c924d866bee2a01c17",
+      "task_sha256": "617222a4af956bc9091ceb119d2c31e0d34bd47ef1d36b362bfb51cb4046dd75",
+      "status": "completed",
+      "elapsed_seconds": 1.8381507978774607,
+      "finish_reason": "stop",
+      "usage": {
+        "completion_tokens": 203,
+        "prompt_tokens": 1685,
+        "total_tokens": 1888,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        }
+      },
+      "model_reported": "qwen3.6-35b-a3b",
+      "output": "# Invoice Desk: a new approach to invoice management\n\nInvoice Desk groups uploaded invoices by supplier. It accepts PDF files up to 15 MB each. Scanned documents that cannot be read remain in a manual review queue. The service does not make payments and has no direct connection to bank accounts. A person must review each invoice before it is marked as checked.\n\n## A clear plan for moving forward\n\nThe Team plan costs 29 USD per month, excluding sales tax, when billed monthly. It includes up to 50 invoices per month. The trial lasts 14 days and does not require a payment card. The Free plan does not include supplier grouping. These conditions apply to the web service; no desktop application is offered.\n\n## Looking ahead with confidence\n\nExports are available only in CSV format. A date for spreadsheet exports has not been announced. The service can flag a possible duplicate, but that flag is not confirmation that an invoice was submitted twice. Users must check it themselves.",
+      "unchanged_ignoring_outer_whitespace": false,
+      "mechanical": {
+        "schema_version": 1,
+        "status": "review_required",
+        "semantic_review_required": true,
+        "meaning_verified": false,
+        "authorship_assessed": false,
+        "source_sha256": "ebd5c9de4b2bf365240759f91bc062f4717e4e0ba523ac4cc0146b7f8bb736af",
+        "output_sha256": "d5d873cac3a6560ec137ffab396474e95a38a4b21dbd66679a3b292699d60a8b",
+        "issue_count": 1,
+        "issues": [
+          {
+            "kind": "manifest_pin",
+            "fragment_sha256": "1935bb8e7d7198929c58bbd8bbb5b71f53e1b68c072d1837a0aa9f95784c58aa",
+            "source_count": 4,
+            "output_count": 2,
+            "reason": "explicit_literal_count_changed"
+          }
+        ],
+        "limits": [
+          "Does not validate facts, attribution, units, negation, scope or commitments.",
+          "Same literal inventory can accompany a different meaning.",
+          "Does not parse all Markdown, HTML, citations or mathematical notation.",
+          "Reformatting numbers can trigger review even when values are equivalent.",
+          "A manifest pin checks literal presence and count, not location or meaning."
+        ]
+      }
+    },
+    {
+      "case": "en-slop",
+      "language": "en",
+      "arm": "humanizer",
+      "source_sha256": "ebd5c9de4b2bf365240759f91bc062f4717e4e0ba523ac4cc0146b7f8bb736af",
+      "instruction_files": {
+        "benchmarks/baselines/humanizer-3.1.0.md": "0612f1dfb1672b0ea9b97e139bf1f06cabe98d8b27424fe8ff01e1fb4cc99cad"
+      },
+      "system_sha256": "19576a6d5d627ff53d14fb09e9ec22f6ef6230d7cb55f1160dcabd52e329e3c2",
+      "task_sha256": "617222a4af956bc9091ceb119d2c31e0d34bd47ef1d36b362bfb51cb4046dd75",
+      "status": "completed",
+      "elapsed_seconds": 1.5456824509892613,
+      "finish_reason": "stop",
+      "usage": {
+        "completion_tokens": 196,
+        "prompt_tokens": 7900,
+        "total_tokens": 8096,
+        "prompt_tokens_details": {
+          "cached_tokens": 7375
+        }
+      },
+      "model_reported": "qwen3.6-35b-a3b",
+      "output": "# Invoice Desk: invoice management\n\nInvoice Desk groups uploaded invoices by supplier. It accepts PDF files up to 15 MB each. Scanned documents that cannot be read remain in a manual review queue. The service does not make payments and has no direct connection to bank accounts. A person must review each invoice before it is marked as checked.\n\n## Plans and limits\n\nThe Team plan costs 29 USD per month, excluding sales tax, when billed monthly. It includes up to 50 invoices per month. The trial lasts 14 days and does not require a payment card. The Free plan does not include supplier grouping. These conditions apply to the web service; no desktop application is offered.\n\n## Exporting and duplicates\n\nExports are available only in CSV format. A date for spreadsheet exports has not been announced. The service can flag a possible duplicate, but that flag is not confirmation that an invoice was submitted twice. Users must check it themselves.",
+      "unchanged_ignoring_outer_whitespace": false,
+      "mechanical": {
+        "schema_version": 1,
+        "status": "review_required",
+        "semantic_review_required": true,
+        "meaning_verified": false,
+        "authorship_assessed": false,
+        "source_sha256": "ebd5c9de4b2bf365240759f91bc062f4717e4e0ba523ac4cc0146b7f8bb736af",
+        "output_sha256": "4de313be623576525e6633ea524a04c348e42ac1da1049765ca2035f42c61b58",
+        "issue_count": 1,
+        "issues": [
+          {
+            "kind": "manifest_pin",
+            "fragment_sha256": "1935bb8e7d7198929c58bbd8bbb5b71f53e1b68c072d1837a0aa9f95784c58aa",
+            "source_count": 4,
+            "output_count": 2,
+            "reason": "explicit_literal_count_changed"
+          }
+        ],
+        "limits": [
+          "Does not validate facts, attribution, units, negation, scope or commitments.",
+          "Same literal inventory can accompany a different meaning.",
+          "Does not parse all Markdown, HTML, citations or mathematical notation.",
+          "Reformatting numbers can trigger review even when values are equivalent.",
+          "A manifest pin checks literal presence and count, not location or meaning."
+        ]
+      }
+    },
+    {
+      "case": "fr-clean",
+      "language": "fr",
+      "arm": "humanizer",
+      "source_sha256": "237ea5e86385af9be229c8db011d6dbd5b6d4d6d3150648d9499eaad44d83da7",
+      "instruction_files": {
+        "benchmarks/baselines/humanizer-3.1.0.md": "0612f1dfb1672b0ea9b97e139bf1f06cabe98d8b27424fe8ff01e1fb4cc99cad"
+      },
+      "system_sha256": "19576a6d5d627ff53d14fb09e9ec22f6ef6230d7cb55f1160dcabd52e329e3c2",
+      "task_sha256": "46cb03bd61dde205fb527c0ceab2b4e49af49b26f6845be54e8ba338daab0b75",
+      "status": "completed",
+      "elapsed_seconds": 0.9330381599720567,
+      "finish_reason": "stop",
+      "usage": {
+        "completion_tokens": 133,
+        "prompt_tokens": 7612,
+        "total_tokens": 7745,
+        "prompt_tokens_details": {
+          "cached_tokens": 7375
+        }
+      },
+      "model_reported": "qwen3.6-35b-a3b",
+      "output": "# Conditions du devis\n\nLa visite coûte 80 CHF hors TVA. Elle comprend l’examen du matériel, un rapport écrit et un appel de suivi. Les réparations font l’objet d’un devis séparé ; tu peux les refuser après l’avoir reçu.\n\nLe rapport est envoyé sous 7 jours ouvrés à compter de la visite, sauf si une pièce doit être recherchée. Dans ce cas, le délai reste à confirmer. Aucun paiement n’est prélevé automatiquement.\n\nLa confirmation porte la mention « Le devis ne vaut pas commande. » Tu n’as pas à accepter une réparation pour recevoir le rapport.",
+      "unchanged_ignoring_outer_whitespace": true,
+      "mechanical": {
+        "schema_version": 1,
+        "status": "no_mechanical_issue_detected",
+        "semantic_review_required": true,
+        "meaning_verified": false,
+        "authorship_assessed": false,
+        "source_sha256": "237ea5e86385af9be229c8db011d6dbd5b6d4d6d3150648d9499eaad44d83da7",
+        "output_sha256": "4a704167cc8feabe3892c3f59b8dfaf3486cd09fba3528124ecdcd6513c8f5dc",
+        "issue_count": 0,
+        "issues": [],
+        "limits": [
+          "Does not validate facts, attribution, units, negation, scope or commitments.",
+          "Same literal inventory can accompany a different meaning.",
+          "Does not parse all Markdown, HTML, citations or mathematical notation.",
+          "Reformatting numbers can trigger review even when values are equivalent.",
+          "A manifest pin checks literal presence and count, not location or meaning."
+        ]
+      }
+    },
+    {
+      "case": "fr-clean",
+      "language": "fr",
+      "arm": "kervia",
+      "source_sha256": "237ea5e86385af9be229c8db011d6dbd5b6d4d6d3150648d9499eaad44d83da7",
+      "instruction_files": {
+        "SKILL.md": "0c774df90d5f5afbcd513d7e73e55f492d05ca88d9b690afcbe5333d81dba49a",
+        "references/fr.md": "8718da202b2f8821082b650dfd7a0cd2e167add5a4c358754ccaa20e4057b7c0"
+      },
+      "system_sha256": "4c1bdfe8e03c98413feeb0775854768353281246f73945d172c7499df494e5f6",
+      "task_sha256": "46cb03bd61dde205fb527c0ceab2b4e49af49b26f6845be54e8ba338daab0b75",
+      "status": "completed",
+      "elapsed_seconds": 1.036662980914116,
+      "finish_reason": "stop",
+      "usage": {
+        "completion_tokens": 133,
+        "prompt_tokens": 1565,
+        "total_tokens": 1698,
+        "prompt_tokens_details": {
+          "cached_tokens": 1328
+        }
+      },
+      "model_reported": "qwen3.6-35b-a3b",
+      "output": "# Conditions du devis\n\nLa visite coûte 80 CHF hors TVA. Elle comprend l’examen du matériel, un rapport écrit et un appel de suivi. Les réparations font l’objet d’un devis séparé ; tu peux les refuser après l’avoir reçu.\n\nLe rapport est envoyé sous 7 jours ouvrés à compter de la visite, sauf si une pièce doit être recherchée. Dans ce cas, le délai reste à confirmer. Aucun paiement n’est prélevé automatiquement.\n\nLa confirmation porte la mention « Le devis ne vaut pas commande. » Tu n’as pas à accepter une réparation pour recevoir le rapport.",
+      "unchanged_ignoring_outer_whitespace": true,
+      "mechanical": {
+        "schema_version": 1,
+        "status": "no_mechanical_issue_detected",
+        "semantic_review_required": true,
+        "meaning_verified": false,
+        "authorship_assessed": false,
+        "source_sha256": "237ea5e86385af9be229c8db011d6dbd5b6d4d6d3150648d9499eaad44d83da7",
+        "output_sha256": "4a704167cc8feabe3892c3f59b8dfaf3486cd09fba3528124ecdcd6513c8f5dc",
+        "issue_count": 0,
+        "issues": [],
+        "limits": [
+          "Does not validate facts, attribution, units, negation, scope or commitments.",
+          "Same literal inventory can accompany a different meaning.",
+          "Does not parse all Markdown, HTML, citations or mathematical notation.",
+          "Reformatting numbers can trigger review even when values are equivalent.",
+          "A manifest pin checks literal presence and count, not location or meaning."
+        ]
+      }
+    }
+  ],
+  "human_judges": 0,
+  "detectors_run": false,
+  "summary": {
+    "all_pairs_completed": true,
+    "totals": {
+      "humanizer": {
+        "prompt_tokens": 23501,
+        "completion_tokens": 565,
+        "total_tokens": 24066,
+        "completed_requests": 3
+      },
+      "kervia": {
+        "prompt_tokens": 5192,
+        "completion_tokens": 574,
+        "total_tokens": 5766,
+        "completed_requests": 3
+      }
+    },
+    "reduction_percent": {
+      "prompt_tokens": 77.90732309263436,
+      "total_tokens": 76.04088755921217
+    },
+    "quality_or_authorship_verified": false
+  }
+}

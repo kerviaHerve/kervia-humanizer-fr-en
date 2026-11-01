@@ -1,0 +1,2 @@
+case,arm,status,prompt_tokens,completion_tokens,total_tokens,mechanical_issues
+fr-slop,humanizer,failed,,,,

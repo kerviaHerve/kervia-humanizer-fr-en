@@ -1,0 +1,7 @@
+case,arm,status,prompt_tokens,completion_tokens,total_tokens,mechanical_issues
+fr-slop,humanizer,completed,7989,236,8225,1
+fr-slop,kervia,completed,1942,238,2180,1
+en-slop,kervia,completed,1685,203,1888,1
+en-slop,humanizer,completed,7900,196,8096,1
+fr-clean,humanizer,completed,7612,133,7745,0
+fr-clean,kervia,completed,1565,133,1698,0
