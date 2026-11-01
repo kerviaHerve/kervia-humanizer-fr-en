@@ -7,6 +7,7 @@ Date : 2026-11-01.
 - 62 tests unitaires réussis : contrôleur local, erreurs de commande, limites de comptage, calculs, chemins de cas, version épinglée de la baseline et concordance entre mesures et prompts.
 - Chargement natif Hermes de la version 0.1.1 dans un home jetable : noyau, français, anglais, référence approfondie et licence disponibles ; aucun script ou asset exécutable dans ce paquet.
 - Précontrôle avec le scanner natif Hermes, source communautaire : verdict safe, aucune alerte et aucune option de forçage. Voir [le relevé et l’empreinte du paquet](validation/runtime-scan.json).
+- Installation réelle depuis GitHub, audit natif et trois tests de chargement réussis dans un home jetable. Les six fichiers installés ont été comparés au dépôt. Voir [la preuve d’installation](validation/hub-install.json).
 - Six appels du benchmark courant terminés, avec les compteurs réellement retournés par le moteur. L’essai précédent reste dans l’historique, sans retouche des sorties.
 
 ```text

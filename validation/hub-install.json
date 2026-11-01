@@ -1,0 +1,24 @@
+{
+  "version": "0.1.1",
+  "source": "kerviaHerve/kervia-humanizer-fr-en/skills/kervia-humanizer-fr-en",
+  "source_revision": "207bcc6d398f53a449784437e2ebdb1da5b6f12f",
+  "native_install_exit": 0,
+  "native_audit_exit": 0,
+  "native_loader_tests": 3,
+  "native_loader_exit": 0,
+  "scanner": "skills-guard-v10",
+  "trust_level": "community",
+  "verdict": "safe",
+  "force_override": false,
+  "bundle_sha256": "e6ea73061b94d66a12f9f8133d7336fbbd400f76aa6d663555d9724a44342938",
+  "files_equal_to_repository": true,
+  "files": [
+    "LICENSE",
+    "SKILL.md",
+    "THIRD_PARTY_NOTICES.md",
+    "references/deep-edit.md",
+    "references/en.md",
+    "references/fr.md"
+  ],
+  "scope": "disposable test home, not a user profile"
+}
